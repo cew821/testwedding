@@ -7,7 +7,10 @@ function resize_top() {
   $('#footman').css({'height': (height - block_bar_height)+'px'});
   $('#heart-container').css({'height': (height - block_bar_height)+'px'});
   $('#our-story').css({'height': ((height - block_bar_height)*1.5)+'px'});
-  var s = skrollr.init();
+
+  if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+    var s = skrollr.init();
+  }
 }
 
 $(document).ready(function() {
